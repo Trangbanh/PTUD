@@ -1,0 +1,79 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm run build",
+    "dev": "vue-cli-service build --watch",
+    "serve": "vue-cli-service serve",
+    "dtos": "x typescript",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "publish": "vue-cli-service build && dotnet publish -c Release",
+    "test": "vue-cli-service test:unit",
+    "test-watch": "vue-cli-service test:unit --watchAll"
+  },
+  "dependencies": {
+    "@servicestack/client": "^1.2.1",
+    "@servicestack/vue": "^1.0.13",
+    "bootstrap": "^5.2.0",
+    "core-js": "^3.25.0",
+    "vue": "^2.7.10",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.6.4"
+  },
+  "devDependencies": {
+    "@iconify/vue2": "^1.2.1",
+    "@types/jest": "^29.0.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-typescript": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/test-utils": "^1.3.0",
+    "typescript": "^4.8.2",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/bin/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.tsx?$": "ts-jest",
+      "^@servicestack/vue$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(babel-jest|jest-vue-preprocessor)/)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+    ],
+    "globals": {
+      "testURL": "https://localhost:5001/"
+    }
+  }
+}
